@@ -1,0 +1,587 @@
+@import config
+@import reset
+@import "blocks/**/*"
+
+body
+  background-color: #F2F1EF
+  .holdscrolling
+    overflow-y: hidden
+    padding-right: 18px
+
+.wrap
+  width: calc( 100% - 5% - 5% )
+  max-width: 1610px
+  margin: 0 auto
+  height: inherit
+
+// Margin 10px
+.mr-10
+  margin-right: 10px !important
+.ml-10
+  margin-left: 10px !important
+.mt-10
+  margin-top: 10px !important
+.mb-10
+  margin-bottom: 10px !important
+
+// Margin 20px
+.mr-20
+  margin-right: 20px !important
+.ml-20
+  margin-left: 20px !important
+.mt-20
+  margin-top: 20px !important
+.mb-20
+  margin-bottom: 20px !important
+
+// Margin 15px
+.mr-15
+  margin-right: 15px !important
+.ml-15
+  margin-left: 15px !important
+.mt-15
+  margin-top: 15px !important
+.mb-15
+  margin-bottom: 15px !important
+
+// Opacity
+.opc-0
+  opacity: 0 !important
+
+// MODAL
+.modal
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 999
+  display: flex
+  align-items: center
+  justify-content: center
+  opacity: 0
+  visibility: hidden
+  pointer-events: none
+  &.active
+    opacity: 1
+    visibility: visible
+    pointer-events: all
+    .modal-overlay
+      animation: fadeIn .2s
+    .modal-content
+      animation: fadeInUp .3s
+  &-overlay
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 997
+    background-color: rgba(#000, .5)
+
+  &-content
+    background-color: #fff
+    padding: 30px 40px
+    z-index: 999
+    min-width: 620px
+    min-height: 220px
+    position: relative
+  &-title
+    font-family: TTRamillasMedium
+    font-weight: normal
+    margin-bottom: 30px
+    font-size: 26px
+    &.centered
+      text-align: center
+
+@keyframes modal-content-in
+  0%
+
+  100%
+
+// Svg Icons
+.svg-icon_container
+  display: flex
+  align-items: center
+  justify-content: center
+
+// Background image
+.background-image
+  background-size: cover !important
+  background-position: 50% 50% !important
+  background-repeat: no-repeat !important
+
+// Text animation
+.animaton-text_container
+  > div
+    overflow: hidden
+  .slide-up
+    display: inline-block
+    line-height: 1.1
+    &.animate
+      animation: slide-up 0.5s cubic-bezier(0.65, 0, 0.35, 1) both
+
+.animaton-text_item
+  span
+    display: inline-block
+    animation-duration: .5s
+
+@keyframes slide-up
+  0%
+    transform: translateY(100%)
+  100%
+    transform: translateY(0)
+
+// Section
+.section-title
+  margin-bottom: 70px
+  overflow: hidden
+  &.centered
+    text-align: center
+  h1
+    font-size: 80px
+    font-family: TTRamillasRegular
+    line-height: 1.5
+  h1.big-title
+    font-size: 115px
+    font-family: TTRamillasMedium
+  p.subtitle
+    font-size: 14px
+    text-transform: uppercase
+    font-family: FuturaPTMedium
+    margin-bottom: 20px
+
+.section-description
+  max-width: 590px
+  margin: 0 auto
+  &.centered
+    text-align: center
+  p
+    font-family: FuturaPTBook
+    font-size: 14px
+    text-transform: uppercase
+    letter-spacing: 5px
+    &:not(:last-of-type)
+      margin-bottom: 25px
+
+.section-gap
+  padding: 120px 0 0
+  &.bottom
+    padding-bottom: 110px
+
+.section-bottom_actions
+  display: flex
+  align-items: center
+  justify-content: center
+  margin-top: 65px
+
+// Buttons
+.buttons-group
+  display: flex
+  align-items: center
+  justify-content: center
+  .btn
+    flex: 1
+.default-btn
+  text-transform: uppercase
+  font-size: 14px
+  font-family: FuturaPTMedium
+  min-width: 200px
+  min-height: 72px
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  position: relative
+  letter-spacing: 4px
+  &:hover
+    &::after
+      background-color: rgba(#000, .05)
+  &::after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    transition: .15s ease
+    height: calc( 100% - 4px )
+    border-radius: 50%
+    border: 1px solid #000
+    transform: rotate(-7deg)
+
+.default-btn.light
+  color: rgba(#fff, .8)
+  &::after
+    border-color: rgba(#fff, .8)
+
+.btn-solid
+  background-color: #363636
+  padding: 10px 16px
+  color: #fff
+  text-transform: uppercase
+  letter-spacing: 2px
+  font-size: 14px
+  min-width: 200px
+  min-height: 50px
+  display: flex
+  align-items: center
+  justify-content: center
+  &:hover
+    color: #fff
+
+.btn-outline
+  border: 1px solid lighten(#000, 85%)
+  padding: 10px
+  height: 50px
+  width: 50px
+  display: flex
+  align-items: center
+  justify-content: center
+
+.big-rounded-btn_container
+  position: relative
+  .big-rounded-btn_wrapper
+    position: absolute
+    cursor: pointer
+    .content
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      color: #fff
+      text-transform: uppercase
+      font-size: 14px
+      letter-spacing: 1px
+      line-height: 1.1
+      span
+        display: block
+      .text
+        margin-bottom: 20px
+      img
+        width: 32px
+
+// Banners
+.fullsize-banner
+  height: 100vh
+  .inner
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    height: inherit
+    padding-left: 15%
+    &.centered
+      justify-content: center
+    &.no-p
+      padding-left: 0
+  .title
+    font-size: 140px
+    font-family: TTRamillasMedium
+    color: #fff
+    margin: 0
+  .section-description
+    color: #fff
+    position: absolute
+    bottom: 120px
+    text-transform: uppercase
+    font-size: 14px
+    letter-spacing: 1px
+    max-width: 560px
+
+#promotional-banner
+  background-image: url(../images/promotional-banner.jpg)
+  .title
+    font-size: 80px
+  .big-rounded-btn_wrapper
+    top: 50%
+    transform: translateY(-90%)
+    right: 10%
+  @media screen and ( max-width: 800px )
+    .title
+      font-size: 50px
+
+#collection-banner
+  background-image: url(../images/collection-banner.jpg)
+  .big-rounded-btn_wrapper
+    top: 100px
+    left: 50%
+    transform: translateX(-50%)
+
+// Inputs & Form
+form.form
+  .form-buttons
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-top: 40px
+  .form-control:not(:last-of-type)
+    margin-bottom: 25px
+  .form-radio
+    margin-bottom: 10px
+    input:checked ~ label
+      color: $textcolor
+    label
+      margin-bottom: 0
+      text-transform: uppercase
+      margin-left: 10px
+      color: $lighttext
+
+.input-group
+  display: flex
+  align-items: center
+  justify-content: center
+  .input:not(:last-of-type)
+    margin-right: 85px
+.input
+  width: 100%
+  padding: 20px
+  border: none
+  outline: none
+  border-bottom: 1px solid #B5AEAD
+  text-align: center
+  text-transform: uppercase
+  letter-spacing: 4px
+  background-color: transparent
+  &:placeholder
+    color: #2C2C2C
+
+textarea[data-txt-autoresize]
+  resize: none
+  overflow: hidden
+
+.dark-section
+  .input
+    background-color: $darkcolor
+    color: rgba(#fff, .8)
+    border-color: rgba(#fff, .8)
+    &::placeholder
+      color: rgba(#fff, .65)
+
+// Feedback
+#feedback
+  max-width: 1120px
+  margin: 0 auto
+  .input
+    background: transparent
+
+// Dropdowns
+[data-dropdown]
+  position: relative
+[data-dropdown-target]
+  &.inactive
+    pointer-events: none
+[data-dropdown-content]
+  position: absolute
+  top: calc(100% + 10px)
+  background-color: #fff
+  white-space: nowrap
+  border-radius: 6px
+  padding: 4px 0
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px
+  will-change: transform
+  opacity: 0
+  visibility: hidden
+  pointer-events: none
+  transition: .2s ease
+  z-index: 999
+  &.show
+    visibility: visible
+    pointer-events: all
+  &.dropdown-in
+    opacity: 1
+    animation: dropdown-in .3s both
+  &.dropdown-out
+    opacity: 0
+    animation: dropdown-out .3s both
+  .dropdown-link
+    color: #333 !important
+    text-align: left
+    justify-content: flex-start !important
+    padding: 2px 16px
+    min-width: 120px
+    &:hover
+      background-color: rgba(#000, .08)
+
+@keyframes dropdown-in
+  0%
+    transform: translateY(-6px)
+  100%
+    transform: translateY(0)
+
+@keyframes dropdown-out
+  100%
+    transform: translateY(6px)
+
+// Tooltip
+[data-balloon]
+  position: relative
+  &::after
+    content: attr(data-balloon)
+    position: absolute
+    left: 50%
+    padding: 0 16px
+    min-height: 30px
+    white-space: nowrap
+    background-color: #fff
+    border-radius: 6px
+    display: flex
+    align-items: center
+    justify-content: center
+    color: #333
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px
+    z-index: 998
+    opacity: 0
+    pointer-events: none
+    transition: all 0.18s ease-out 0.18s
+    border: 1px solid rgba(#000, .1)
+  &::before
+    content: ""
+    position: absolute
+    background-image: url(../images/icons/tooltip.svg)
+    background-repeat: no-repeat
+    width: 18px
+    height: 6px
+    background-size: 100% auto
+    left: 50%
+    opacity: 0
+    transition: all 0.18s ease-out 0.18s
+    pointer-events: none
+
+[data-balloon][data-balloon-pos="bottom"]
+  &::after
+    transform: translate(-50%, 8px)
+    top: 100%
+  &::before
+    transform: translate(-50%, -1px) rotate(180deg)
+    top: 100%
+  &:hover
+    &::after
+      transform: translate(-50%, 15px)
+      opacity: 1
+    &::before
+      transform: translate(-50%, 9.5px) rotate(180deg)
+      opacity: 1
+
+[data-balloon][data-balloon-pos="top"]
+  &::after
+    box-shadow: rgba(100, 100, 111, 0.2) 0px -7px 29px 0px
+    transform: translate(-50%, -8px)
+    bottom: 100%
+  &::before
+    transform: translate(-50%, -1px) rotate(0deg)
+    bottom: 100%
+  &:hover
+    &::after
+      transform: translate(-50%, -15px)
+      opacity: 1
+    &::before
+      transform: translate(-50%, -9.5px) rotate(0)
+      opacity: 1
+
+[data-balloon][data-balloon-pos-x="right"]
+  &::after
+    left: -10px
+
+[data-balloon][data-balloon-pos-x="left"]
+  &::after
+    left: calc(100% + 10px)
+
+// Overlay
+#overlay
+  opacity: 0
+  pointer-events: none
+  visibility: hidden
+  background-color: rgba(#000, .5)
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  transition: .2s
+  z-index: 998
+  &.active
+    opacity: 1
+    pointer-events: all
+    visibility: visible
+
+// Accodrion
+.accordion-item
+  .content
+    padding: 0 10px 0
+    font-size: 15px
+    transition: .2s ease-in-out
+    max-height: 0
+    overflow: hidden
+
+// Cursors
+[data-custom-cursor]
+  .custom-cursor
+    position: absolute
+    z-index: -1
+    pointer-events: none
+    top: 0
+    left: 0
+    border-radius: 50%
+    transform: translate(-50%, -50%)
+    opacity: 0
+    &.inactive
+      animation: cursor-out .3s forwards
+    &.active
+      animation: cursor-in .3s forwards
+
+  .cursor-type-2
+    background: rgb(251,190,191)
+    background: radial-gradient(circle, rgba(251,190,191,1) 0%, rgba(255,255,255,0) 70%, rgba(255,255,255,0) 100%)
+    width: 720px
+    height: 720px
+
+@keyframes cursor-in
+  0%
+    opacity: 0
+    transform: translate(-50%, -50%) scale(0)
+  100%
+    opacity: 1
+    transform: translate(-50%, -50%) scale(1)
+
+@keyframes cursor-out
+  0%
+    opacity: 1
+    transform: translate(-50%, -50%) scale(1)
+  100%
+    opacity: 0
+    transform: translate(-50%, -50%) scale(0)
+
+// Footer
+.footer
+  padding: 90px 0 110px
+  color: #fff
+  background-color: $darkcolor
+  a:hover
+    text-decoration: underline
+  &-top
+    margin-bottom: 110px
+    .form
+      max-width: 760px
+      margin: 0 auto
+  .footer-links
+    display: flex
+    align-items: flex-start
+    justify-content: space-around
+    flex-wrap: wrap
+  .footer-link_category
+    .title
+      font-size: 16px
+      letter-spacing: 4px
+      text-transform: uppercase
+      margin-bottom: 30px
+    .links
+      display: block
+      li
+        margin-bottom: 8px
+      .sections
+        display: flex
+        div:first-of-type
+          margin-right: 40px
+
+@import information-pages
+@import auth
+@import account
+@import media

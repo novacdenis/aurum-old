@@ -1,0 +1,42 @@
+#auth
+  margin-top: 100px
+  margin-bottom: 90px
+  .auth-layout
+    max-width: 720px
+    margin: 0 auto
+    text-align: center
+
+#auth
+  .auth-layout
+    &_title
+      font-size: 24px
+      text-transform: uppercase
+      font-weight: normal
+      margin-bottom: 10px
+    &_subtitle
+      font-size: 14px
+      letter-spacing: 1px
+      text-transform: uppercase
+      span
+        color: $lighttext
+        display: block
+        margin-bottom: 4px
+      a
+        text-decoration: underline
+    &_form
+      margin: 20px 0
+      .form-buttons
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-top: 30px
+    &_subform
+      margin-top: 40px
+      a, span
+        letter-spacing: 1px
+        color: darken($lighttext, 10%)
+        display: block
+      a
+        text-transform: uppercase
+        &:hover
+          text-decoration: underline

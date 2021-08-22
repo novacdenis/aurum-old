@@ -1,0 +1,199 @@
+#services
+  .top-banner
+    background-image: url(../images/infpages/services.jpg)
+  .bottom-banner
+    .big-rounded-btn_wrapper
+      top: 100px
+      left: 50%
+      transform: translateX(-50%)
+
+#about
+  .top-banner
+    background-image: url(../images/infpages/about.png)
+  .bottom-banner
+    margin-top: 100px
+  .bottom-banner
+    .big-rounded-btn_wrapper
+      top: 100px
+      left: 50%
+      transform: translateX(-50%)
+    &.centered
+      .big-rounded-btn_wrapper
+        top: 50%
+        transform: translate(-50%, -50%)
+
+#career
+  .top-banner
+    background-image: url(../images/infpages/career.png)
+  .bottom-banner
+    .big-rounded-btn_wrapper
+      top: 100px
+      left: 50%
+      transform: translateX(-50%)
+
+#contacts
+  .contacts-addresses
+    max-width: 400px
+    margin: 50px auto 90px
+    text-align: center
+    p
+      text-transform: uppercase
+      font-size: 14px
+      letter-spacing: 3px
+    .flex
+      display: flex
+      align-items: center
+      justify-content: space-between
+      p
+        margin-bottom: 0
+  #contacts-map
+    height: 500px
+    width: 100%
+
+#nihuia
+  width: 30px
+  height: 30px
+  background-color: red
+
+#faq
+  margin-top: 80px
+  .faq-container
+    max-width: 1000px
+    margin: 30px auto
+    .accordion-item
+      border-bottom: 2px solid lighten($lighttext, 20%)
+      &.active
+        .head
+          .icon
+            transform: rotate(-90deg)
+    .head
+      text-transform: uppercase
+      letter-spacing: 2px
+      font-size: 18px
+      padding: 15px 38px 15px 0
+      display: block
+      position: relative
+      .icon
+        position: absolute
+        right: 10px
+        top: 15px
+        transition: .15s
+        transform: rotate(90deg)
+        svg
+          path
+            fill: #333
+    .content
+      text-transform: uppercase
+      font-size: 14px
+      padding: 0
+#guarantee
+  margin-top: 100px
+  margin-bottom: 60px
+
+.services-info
+  &_images
+    margin-top: 110px
+    margin-bottom: 90px
+    display: flex
+    align-items: center
+    justify-content: center
+    .content
+      position: relative
+      &::after
+        content: ""
+        position: absolute
+        left: 100%
+        top: 20%
+        transform: translateX(-40%)
+        background-image: url(../images/infpages/about-1_mini.jpg)
+        background-size: cover
+        background-position: 50% 50%
+        background-repeat: no-repeat
+        width: 316px
+        height: 416px
+    img
+      max-width: 695px
+      max-height: 854px
+
+.bottom-banner
+  margin-bottom: 100px
+
+.pragraphs-grid
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+  .left, .right
+    flex: 1
+    text-align: left
+    text-transform: uppercase
+    font-size: 14px
+    letter-spacing: 5px
+    p:not(:last-of-type)
+      margin-bottom: 20px
+  .left
+    margin-right: 10%
+
+.images-grid
+  margin-top: 90px
+  margin-bottom: 80px
+  text-align: center
+  display: flex
+  align-items: center
+  justify-content: center
+  .left, .right
+    display: inline-block
+    img
+      max-height: 100%
+      max-width: 100%
+  .left
+    margin-right: 10px
+
+@media screen and ( max-width: 920px )
+  .images-grid
+    flex-direction: column
+    .left
+      margin-right: 0
+      margin-bottom: 10px
+
+@media screen and ( max-width: 800px )
+  .pragraphs-grid
+    flex-direction: column
+    .left
+      margin-right: 0
+      margin-bottom: 30px
+  .images-grid
+    margin-top: 30px
+    margin-bottom: 40px
+  #services
+    .services-info_images
+      margin-top: 60px
+      margin-bottom: 50px
+      .content
+        text-align: center
+        overflow: hidden
+        &::after
+          width: 112px
+          height: 172px
+          left: 80%
+          top: 10%
+      img
+        max-width: 80%
+  .bottom-banner
+    margin-bottom: 40px
+  #about .bottom-banner
+    margin-top: 50px
+  #guarantee
+    margin-bottom: 20px
+    margin-top: 40px
+  #faq
+    margin-top: 40px
+    .faq-container .head
+      font-size: 16px
+
+@media screen and ( max-width: 500px )
+  #faq
+    .faq-container
+      .head
+        font-size: 14px
+      .content
+        font-size: 13px

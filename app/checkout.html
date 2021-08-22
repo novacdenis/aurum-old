@@ -1,0 +1,133 @@
+<!--#set var="title" value="OptimizedHTML 5" -->
+<!--#include virtual="/parts/header.html" -->
+<!--#include virtual="/parts/navigation.html" -->
+<!--#include virtual="/parts/search.html" -->
+
+<main id="main">
+  <section id="checkout">
+    <div class="wrap">
+      <form action="" id="checkout-form" class="form">
+        <div class="checkout-container">
+          <div class="checkout-form">
+            <h3 class="form-title">Платежные реквизиты</h3>
+            <div class="form-control">
+              <input type="text" class="input" required placeholder="Имя*" />
+            </div>
+            <div class="form-control">
+              <input type="text" class="input" required placeholder="Фамилия*" />
+            </div>
+            <div class="form-control">
+              <select class="custom-selet input">
+                <option disabled selected>Страна/Регион</option>
+              </select>
+            </div>
+            <div class="form-control">
+              <input type="text" class="input" required placeholder="Улица*" />
+            </div>
+            <div class="form-control">
+              <input type="text" class="input" required placeholder="Город*" />
+            </div>
+            <div class="form-control">
+              <div class="input-group">
+                <input type="text" class="input" required placeholder="Почтовый код*" />
+                <input type="text" class="input" required placeholder="Телефон*" />
+              </div>
+            </div>
+            <div class="form-control">
+              <input type="text" class="input" required placeholder="Электронная почта*" />
+            </div>
+          </div>
+          <div class="checkout-info">
+            <div class="flex-line checkout-info_heading">
+              <h3 class="title">Товар</h3>
+              <h4 class="title">Подытог</h4>
+            </div>
+            <div class="flex-line checkout-info_item">
+              <div class="item-name">
+                <span class="name">
+                  Наименование тут Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </span>
+                <span class="count">X1</span>
+              </div>
+              <div class="item-price">
+                <span class="price">00.00 MDL</span>
+              </div>
+            </div>
+            <div class="flex-line checkout-info_item">
+              <div class="item-name">
+                <span class="name">
+                  Наименование тут Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </span>
+                <span class="count">X1</span>
+              </div>
+              <div class="item-price">
+                <span class="price">00.00 MDL</span>
+              </div>
+            </div>
+            <div class="flex-line checkout-info_item">
+              <div class="item-name">
+                <span class="name">
+                  Наименование тут Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </span>
+                <span class="count">X1</span>
+              </div>
+              <div class="item-price">
+                <span class="price">00.00 MDL</span>
+              </div>
+            </div>
+            <div class="flex-line checkout-info_meta a-ce mt-15">
+              <h3 class="title">Подытог</h3>
+              <p>00.00 MDL</p>
+            </div>
+            <div class="flex-line checkout-info_meta a-ce">
+              <h3 class="title">Итог</h3>
+              <p>00.00 MDL</p>
+            </div>
+            <div class="checkout-info_meta a-ce b-line mb-20">
+              <div class="form-control" id="checkout-promocode">
+                <span class="code-success"></span>
+                <div class="input-container">
+                  <input
+                    type="text"
+                    name="promocode"
+                    id="code-type"
+                    placeholder="Промокод (опционально)"
+                  />
+                </div>
+                <button type="button" class="btn action">
+                  <img src="/images/icons/check.svg" class="svg-icon" />
+                </button>
+              </div>
+            </div>
+            <div class="checkout-info_payment checkout-section">
+              <h4 class="checkout-section_title">Оплата</h4>
+              <div class="form-radio">
+                <input type="radio" name="payment" id="cash" checked />
+                <label for="cash">Оплата наличными при доставке</label>
+              </div>
+              <div class="form-radio">
+                <input type="radio" name="payment" id="online" />
+                <label for="online">Оплата онлайн</label>
+              </div>
+            </div>
+            <div class="checkout-info_shipping checkout-section">
+              <h4 class="checkout-section_title">Доставка</h4>
+              <div class="form-radio">
+                <input type="radio" name="payment" id="pickup" checked />
+                <label for="cash">Самовызов</label>
+              </div>
+              <div class="form-radio">
+                <input type="radio" name="payment" id="delivery" />
+                <label for="online">Доставка на дом</label>
+              </div>
+              <button class="btn btn-solid mt-20">Завершить</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!--#include virtual="/parts/feedback.html" -->
+</main>
+
+<!--#include virtual="/parts/footer.html" -->

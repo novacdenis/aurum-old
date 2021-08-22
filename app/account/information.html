@@ -1,0 +1,48 @@
+<!--#set var="title" value="OptimizedHTML 5" -->
+<!--#include virtual="/parts/header.html" -->
+<!--#include virtual="/parts/navigation.html" -->
+<!--#include virtual="/parts/search.html" -->
+
+<main id="main">
+  <section id="account">
+    <div class="wrap">
+      <div class="account-layout">
+        <div class="account-layout_content">
+          <div class="content-nav">
+            <!--#include virtual="parts/navigation.html" -->
+          </div>
+          <div class="content-main">
+            <h4 class="title">Информация</h4>
+            <div class="account-form">
+              <form action="">
+                <div class="form-control">
+                  <label for="name">Имя</label>
+                  <input type="text" id="name" class="input" placeholder="Имя пользователя" />
+                </div>
+                <div class="form-control">
+                  <label for="surname">Фамилия</label>
+                  <input type="text" id="surname" class="input" placeholder="Фамилия пользователя" />
+                </div>
+                <div class="form-control">
+                  <label for="name">Эл. Почта</label>
+                  <input type="email" id="email" class="input" placeholder="ЭЛЕКТРОННАЯ ПОЧТА" />
+                </div>
+                <div class="form-control">
+                  <label for="name">Телефон</label>
+                  <input type="email" id="email" class="input" placeholder="Телефон" />
+                </div>
+                <div class="form-buttons">
+                  <button class="btn btn-solid" type="submit">Сохранить</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--#include virtual="/parts/feedback.html" -->
+</main>
+
+<!--#include virtual="/parts/footer.html" -->

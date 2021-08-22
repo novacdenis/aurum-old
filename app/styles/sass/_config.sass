@@ -1,0 +1,133 @@
+// USER VARIABLES SECTION
+
+$accent: orange
+$fontsize: 16px
+$textcolor: #2C2C2C
+$darkcolor: #363636
+$lineheight: 1.65
+$lighttext: #B6AEAD
+$userfont: FuturaPTBook, sans-serif
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif
+
+// // Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px
+$gutter: $grid-gutter-width
+
+// // IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+@import 'node_modules/swiper/swiper-bundle'
+@import 'node_modules/animate.css/animate.min'
+@import 'libs'
+
+// FONTS LOAD SECTION
+@mixin font($fname, $fstyle, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		src: url($furl)
+
+@include font('FuturaPTBold', normal, '../fonts/FuturaPTBold.otf')
+@include font('FuturaPTMedium', normal, '../fonts/FuturaPTMedium.otf')
+@include font('futura-pt-light-oblique', italic, '../fonts/futura-pt-light-oblique.otf')
+@include font('FuturaPTLight', normal, '../fonts/FuturaPTLight.otf')
+@include font('FuturaPTHeavy', normal, '../fonts/FuturaPTHeavy.otf')
+@include font('FuturaPTExtraBold', normal, '../fonts/FuturaPTExtraBold.otf')
+@include font('FuturaPTDemi', normal, '../fonts/FuturaPTDemi.otf')
+@include font('FuturaPTBook', normal, '../fonts/FuturaPTBook.otf')
+@include font('HattonMedium', normal, '../fonts/Hatton-Medium.otf')
+@include font('HattonSemibold', normal, '../fonts/Hatton-Semibold.otf')
+@include font('HattonUltralight', normal, '../fonts/Hatton-Ultralight.otf')
+@include font('TTRamillasExtraBoldItalic', italic, '../fonts/TTRamillas-ExtraBoldItalic.otf')
+@include font('TTRamillasExtraLight', normal, '../fonts/TTRamillas-ExtraLight.otf')
+@include font('TTRamillasExtraLightItalic', italic, '../fonts/TTRamillas-ExtraLightItalic.otf')
+@include font('TTRamillasItalic', italic, '../fonts/TTRamillas-Italic.otf')
+@include font('TTRamillasLight', normal, '../fonts/TTRamillas-Light.otf')
+@include font('TTRamillasLightItalic', italic, '../fonts/TTRamillas-LightItalic.otf')
+@include font('TTRamillasMedium', normal, '../fonts/TTRamillas-Medium.otf')
+@include font('TTRamillasMediumItalic', italic, '../fonts/TTRamillas-MediumItalic.otf')
+@include font('TTRamillasRegular', normal, '../fonts/TTRamillas-Regular.otf')
+
+// // GENERAL DOCUMENT STYLES
+body
+	font-family: $userfont
+	font-size: $fontsize
+	line-height: $lineheight
+	color: $textcolor
+	min-width: 320px
+	overflow-x: hidden
+	position: relative
+
+.clip-text
+	position: relative
+	transition: all .8s ease
+	&.left
+		-webkit-clip-path: inset(0 100% 0 0)
+		clip-path: inset(0 100% 0 0)
+
+	&.top
+		-webkit-clip-path: inset(0 0 100% 0)
+		clip-path: inset(0 0 100% 0)
+
+	&.reveal
+		&.left, &.top
+			clip-path: inset(0)
+
+.big-rounded-btn_wrapper
+	position: absolute
+	z-index: 97
+
+.progress-ring
+	&__circle
+		transform: rotate(-90deg)
+		transform-origin: 50% 50%
+		&.animate
+			transition: 1.5s stroke-dashoffset
+
+.notifcation-container
+	position: fixed
+	top: 20px
+	right: 20px
+	z-index: 9999
+	background-color: #fff
+	border-radius: 4px
+	padding: 16px 18px
+	padding-left: 52px
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px
+	border: 1px solid rgba(#000, .1)
+	animation-duration: .3s
+	max-width: 384px
+	cursor: pointer
+	&.slower
+		animation-duration: .8s
+
+	.notification__inner
+		&-icon
+			position: absolute
+			left: 12px
+			top: 20px
+			img
+				width: 28px
+		&-title
+			font-size: 18px
+			font-family: FuturaPTMedium
+
+@media screen and ( max-width: 650px )
+	.notifcation-container
+		top: unset
+		right: 10px
+		left: 10px
+		padding: 8px 10px
+		padding-left: 46px
+		bottom: 10px
+		max-width: unset
+		.notification__inner
+			&-icon
+				position: absolute
+				left: 12px
+				top: 10px
+				img
+					width: 24px
+			&-title
+				font-size: 16px

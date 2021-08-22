@@ -1,0 +1,297 @@
+#cart
+  max-width: 1200px
+  margin: 45px auto 0
+  position: relative
+  &::before, &::after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 78
+    pointer-events: none
+    visibility: hidden
+  &::after
+    background-color: rgba(#fff, .8)
+  &::before
+    background-image: url(../images/icons/loading.svg)
+    background-repeat: no-repeat
+    background-position: 50% 30%
+    background-size: 100px
+    z-index: 79
+  &.loading
+    &::before, &::after
+      visibility: visible
+      pointer-events: all
+    &::after
+      animation: fadeIn .2s
+    &::before
+      animation: zoomIn .3s
+  .section-title
+    margin-bottom: 30px
+    position: relative
+    z-index: 80
+    h1
+      font-size: 34px
+
+.cart-list
+  border-bottom: 2px dashed lighten(#000, 85%)
+  padding-bottom: 10px
+  &_headings
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    margin-bottom: 10px
+    .heading
+      text-transform: uppercase
+      font-size: 14px
+      letter-spacing: 2px
+      color: $lighttext
+      &.actions
+        flex: 0.5
+      &.image
+        flex: 1.5
+      &.name
+        flex: 2
+      &.count, &.price, &.subtotal
+        flex: 1
+      &.fake
+        visibility: hidden
+  .cart-list_grid
+    &.empty
+      display: block !important
+    .empty-notify
+      text-align: center
+      padding: 50px 0 30px
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-direction: column
+      &_descrp
+        color: #636363
+        h3
+          font-family: FuturaPTDemi
+      button
+        margin-top: 20px
+      &_image
+        svg
+          width: 64px
+          height: 64px
+          margin-bottom: 15px
+          path
+            fill: #adadad
+.cart-list_item
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 15px 0
+  font-size: 18px
+  &.disabled
+    [data-remove-item], [data-remove-item-m]
+      pointer-events: none
+      opacity: .6 !important
+  &:not(:last-of-type)
+    border-bottom: 1px solid lighten(#000, 85%)
+  .item-price, .item-count, .item-subtotal
+    flex: 1
+  .item-image
+    display: flex
+    align-items: center
+    justify-content: center
+    flex: 1.5
+    position: relative
+    &_size
+      left: 50%
+      transform: translate(calc(-50% + 55px))
+      top: 7px
+      position: absolute
+      font-size: 14px
+      font-family: FuturaPTMedium
+      border: 1px solid lighten(#000, 85%)
+      width: 25px
+      height: 25px
+      text-align: center
+      background-color: #f2f1ef
+    img
+      border: 1px solid lighten(#000, 85%)
+      width: 150px
+      height: 150px
+  .item-name
+    text-transform: uppercase
+    flex: 2
+  .item-actions
+    flex: 0.5
+    .item-action
+      opacity: .8
+      svg
+        width: 24px
+        height: 24px
+  [data-remove-item-m]
+    display: none
+  .item-mobile_meta
+    flex: 5
+    display: flex
+    justify-content: space-between
+
+.cart-info
+  margin-top: 18px
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+  &_refresh
+    display: flex
+    justify-content: flex-end
+  &_meta
+    margin-top: 55px
+    max-width: 100%
+    width: 480px
+    margin-right: 0
+    .meta-item
+      padding: 16px 0 12px
+      border-bottom: 2px solid lighten(#000, 85%)
+      text-transform: uppercase
+      letter-spacing: 2px
+      display: flex
+      align-items: center
+      justify-content: space-between
+  &_finish
+    margin-top: 25px
+
+@media screen and ( max-width: 1000px )
+  .cart-list_headings
+    display: none
+  .cart-list_grid
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 20px
+  .cart-list_item
+    position: relative
+    border: 1px solid lighten(#000, 85%)
+    padding: 15px
+    .item-mobile_meta
+      display: inline-block
+      .content
+        display: inline-flex
+        flex-direction: column
+    .item-actions
+      flex: unset
+    [data-remove-item]
+      display: none
+    [data-remove-item-m]
+      display: block
+      position: absolute
+      bottom: -35px
+      left: 50%
+      transform: translateX(-50%)
+      border: 1px solid lighten(#000, 85%)
+      padding: 2px 12px
+      &:hover, &:focus
+        background-color: rgba(#000, .05)
+      &:active
+        background-color: rgba(#000, .12)
+    .item-image
+      flex: unset
+      position: relative
+      margin-right: 20px
+      img
+        border: none
+        width: 125px
+        height: 125px
+
+  .cart-list_item
+    [data-mobile-label]
+      min-width: 180px
+      padding: 10px
+      border: 1px solid lighten(#000, 85%)
+      font-size: 15px
+      position: relative
+      &::after
+        content: attr(data-mobile-label)
+        position: absolute
+        background-color: #f2f1ef
+        padding: 0 2px
+        left: 6px
+        bottom: 100%
+        font-size: 13px
+        text-transform: none
+        transform: translateY(calc(50% - 2px))
+      &:not(:last-of-type)
+        margin-bottom: 14px
+
+@media screen and ( max-width: 780px )
+  .cart-list_grid
+    display: grid
+    grid-template-columns: 1fr
+    gap: 20px
+  .cart-list_item
+    .item-mobile_meta
+      flex: 4
+    .item-image
+      flex: 2
+      img
+        width: 150px
+        height: 150px
+
+@media screen and ( max-width: 520px )
+  .cart-list_item
+    flex-direction: column
+    [data-remove-item-m]
+      left: unset
+      right: -5px
+      top: -5px
+      bottom: unset
+      transform: translateX(0)
+    .item-mobile_meta
+      flex: 4
+      width: 100%
+    .item-image
+      flex: 2.5
+      margin: 0
+      width: 100%
+      &.loading
+        margin-bottom: 5px
+      img
+        width: 150px
+        height: 150px
+
+// CART LOADING
+.cart-list_item
+  .item-image.loading
+    .image
+      width: 150px
+      height: 150px
+      background: #eee
+      background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%)
+      border-radius: 5px
+      background-size: 200% 100%
+      background-position-x: -100%
+      animation: 1.5s shine linear infinite
+  .item-mobile_meta.loading
+    .item-name, .item-price, .item-count, .item-subtotal
+      background: #eee
+      background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%)
+      border-radius: 4px
+      background-size: 200% 100%
+      animation: 1.5s shine linear infinite
+      color: transparent
+      background-position-x: -100%
+      &:not(:last-of-type)
+        margin-right: 10px
+    [data-mobile-label]::after
+      display: none
+
+@media screen and ( max-width: 1000px )
+  .cart-list_item
+    .item-mobile_meta.loading
+      .item-name, .item-price, .item-count, .item-subtotal
+        &:not(:last-of-type)
+          margin-right: 0
+          margin-bottom: 6px
+          margin-top: 3px
+
+@keyframes shine
+  0%
+    background-position-x: 100%
+  50%
+    background-position-x: -100%

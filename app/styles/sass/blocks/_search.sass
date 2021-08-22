@@ -1,0 +1,95 @@
+.search
+  position: fixed
+  top: 0
+  right: 0
+  width: 340px
+  height: 100%
+  background-color: #fff
+  z-index: 1000
+  padding: 20px 15px
+  visibility: hidden
+  pointer-events: none
+  animation-duration: .2s
+  opacity: 0
+  &.active
+    visibility: visible
+    pointer-events: all  
+    opacity: 1
+#search-form
+  position: relative
+  display: flex
+  input
+    width: 100%
+    border: none
+    outline: none
+    padding: 6px 16px
+    background-color: #F1F2F5
+    padding-left: 40px
+    border-radius: 12px
+    margin-right: 10px
+  button.loader
+    position: absolute
+    left: 14px
+    top: calc(50% - 2px)
+    transform: translateY(-50%)
+    .loading
+      display: none
+      width: 17px
+      height: 17px
+    &.active
+      .static
+        display: none
+      .loading
+        display: unset
+
+    svg
+      width: 15px
+      height: 15px
+    path
+      fill: #333
+.search-inner_results
+  margin-top: 15px
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: auto
+  gap: 10px
+  justify-content: center
+  &-all
+    width: 100%
+    display: block
+    text-align: center
+    margin-top: 10px
+    text-decoration: underline
+  .product-box
+    width: 100%
+    border-radius: 6px
+    display: flex
+    align-items: center
+    border: 1px solid #ebebeb
+    &_image
+      width: 70px
+      height: 70px
+      margin-right: 15px
+      border: unset
+      min-height: unset
+      display: flex
+      img
+        width: 70px
+        object-fit: cover
+    &_meta
+      margin-top: 0
+      padding: 10px 0
+    &_meta-name
+      font-size: 12px
+    &_action
+      top: 10px
+      right: 10px
+      .svg-icon
+        width: 18px
+        height: 18px
+
+.search-results_title
+  font-family: FuturaPTMedium
+  text-transform: uppercase
+  font-size: 13px
+  margin-bottom: -5px

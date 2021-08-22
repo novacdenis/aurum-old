@@ -1,0 +1,116 @@
+#shop
+  padding: 70px 0 110px
+  position: relative
+  .shop-container
+    display: grid
+    grid-template-columns: repeat(12, 1fr)
+    grid-template-rows: auto
+    gap: 50px
+    .shop-sortign_container
+      grid-column: 1 / 4
+      align-self: start
+      padding-top: 60px
+    .shop-products_container
+      grid-column: 4 / 13
+  .products-grid
+    grid-template-columns: repeat(3, minmax(176px, 374px))
+  .shop-sorting
+    &_link
+      display: block
+      text-transform: uppercase
+      font-size: 18px
+      letter-spacing: 4px
+      &:hover
+        text-decoration: underline
+      .icon
+        margin-left: 8px
+      .svg-icon
+        width: 14px
+        transform: rotate(90deg)
+      path
+        fill: $textcolor
+    &_category
+      & > .shop-sorting_link
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        letter-spacing: 4px
+      .content
+        padding-left: 0
+        .shop-sorting_link
+          font-size: 14px
+          letter-spacing: 1px
+
+  .shop-products_pagination
+    display: flex
+    align-items: center
+    justify-content: center
+    margin: 70px 0 30px
+    .pagination-link
+      font-size: 20px
+      width: 40px
+      height: 40px
+      display: flex
+      align-items: center
+      justify-content: center
+      border: 1px solid transparent
+      margin-right: 8px
+      transition: .1s ease
+      background-color: #fff
+      path
+        fill: $textcolor
+      &:hover
+        border: 1px solid #B5AEAD
+      &:active
+        background-color: rgba(#000, .1)
+      &.active
+        border-bottom: 1px solid #B5AEAD
+  .shop-products_filters
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    margin-bottom: 25px
+    .filter-select
+      border: none
+      outline: none
+      border-bottom: 1px solid #B5AEAD
+      text-transform: uppercase
+      padding: 6px 0
+      min-width: 300px
+      background: transparent
+      &:first-of-type
+        margin-right: 25px
+
+@media screen and ( max-width: 1000px )
+  #shop
+    .products-grid
+      grid-template-columns: repeat(2, minmax(176px, 374px))
+    .shop-container
+      .shop-sortign_container
+        grid-column: 1 / 5
+      .shop-products_container
+        grid-column: 5 / 13
+    .shop-products_filters
+      .filter-select
+        min-width: 200px
+
+@media screen and ( max-width: 760px )
+  #shop
+    padding-top: 20px
+    padding-bottom: 35px
+    .shop-container
+      display: unset
+    .products-grid
+      grid-template-columns: repeat(2, minmax(150px, 374px))
+    .shop-container
+      .shop-sortign_container
+        grid-column: unset
+        display: none
+      .shop-products_container
+        grid-column: unset
+    .shop-products_filters
+      margin-bottom: 60px
+      justify-content: center
+      .filter-select
+        min-width: unset
+        flex: 1

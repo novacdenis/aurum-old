@@ -1,0 +1,301 @@
+<!--#set var="title" value="OptimizedHTML 5" -->
+<!--#include virtual="/parts/header.html" -->
+<!--#include virtual="/parts/navigation.html" -->
+<!--#include virtual="/parts/search.html" -->
+
+<main id="main">
+  <section id="single-product">
+    <div class="wrap">
+      <div class="single-product_container">
+        <div class="single-product_slider">
+          <div class="slider-content">
+            <div class="thumbs-gallery">
+              <div class="image" data-image-src="/images/categories/cat5-2.jpg">
+                <img src="/images/p-slider1.jpg" />
+              </div>
+              <div class="image" data-image-src="/images/categories/cat1-1.jpg">
+                <img src="/images/p-slider2.jpg" />
+              </div>
+            </div>
+            <div class="fullsize-gallery">
+              <div class="image animate__animated">
+                <img src="/images/el1.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="single-product_info">
+          <form action="">
+            <h1 class="title">Наименование тут</h1>
+            <h4 class="price">00.00 MDL</h4>
+            <div class="colours">
+              <div class="block-title">Цвета</div>
+              <div class="colours-container">
+                <div class="colours-item" data-hex="#007ACC">
+                  <input type="radio" name="colour" value="id_ori_ceva" />
+                  <div class="colours-image"></div>
+                </div>
+                <div class="colours-item" data-hex="#C02C26">
+                  <input type="radio" name="colour" value="id_ori_ceva" />
+                  <div class="colours-image"></div>
+                </div>
+                <div class="colours-item" data-hex="#E3732E">
+                  <input type="radio" name="colour" value="id_ori_ceva" />
+                  <div class="colours-image"></div>
+                </div>
+              </div>
+            </div>
+            <div class="sizes">
+              <div class="label">Размер</div>
+              <div class="value">
+                <select name="size" id="">
+                  <option value="" disabled selected>Выбрать</option>
+                  <option value="18">18</option>
+                  <option value="20">20</option>
+                  <option value="22">22</option>
+                  <option value="24">24</option>
+                </select>
+              </div>
+            </div>
+            <div class="description">
+              <div class="block-title">Материалы</div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dictum venenatis dolor, ut
+                fringilla nisi cursus quis. Nulla aliquam porta urna, a porta ipsum tincidunt a.
+              </p>
+            </div>
+            <div class="quantity">
+              <div class="quantity-remove quantity-btn" data-balloon="Убавить" data-balloon-pos="top">
+                <img src="images/icons/minus.svg" class="svg-icon" alt="-" />
+              </div>
+              <div class="quantity-count quantity-value">
+                <input type="text" value="1" data-max="10" readonly />
+              </div>
+              <div class="quantity-add quantity-btn" data-balloon="Добавить" data-balloon-pos="top">
+                <img src="images/icons/plus.svg" class="svg-icon" alt="+" />
+              </div>
+            </div>
+            <div class="actions">
+              <button class="btn btn-solid">Добавить в корзину</button>
+              <button class="action btn-outline btn animate__animated" id="add-to-fav" type="button" data-product-id="56" data-product-fav="false">
+                <img
+                  src="/images/icons/p-heart.svg"
+                  data-product-favorite-add
+                  class="svg-icon add-to-fav"
+                  alt="Добавить в избранные"
+                />
+                <img
+                  src="/images/icons/p-heart-filled.svg"
+                  data-product-favorite-remove
+                  class="svg-icon remove-from-fav"
+                  alt="Убрать из избранных"
+                />
+                <img
+                  src="/images/icons/loading.svg"
+                  data-loading
+                  class="svg-icon loading"
+                  alt="Загрузка"
+                />
+              </button>
+            </div>
+          </form>
+          <div class="helping">
+            <div class="accordion-item">
+              <a href="#" class="head">
+                <span class="text">Гид по размерам</span>
+                <span class="icon svg-icon_container">
+                  <img src="/images/icons/angle-down.svg" class="svg-icon" />
+                </span>
+              </a>
+              <div class="content">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus hic molestias eius
+                  eveniet facere assumenda consequuntur ullam, dolorum iure laborum ipsa dicta, nesciunt quam
+                  aperiam inventore nobis maxime? Molestias, voluptas?
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a href="#" class="head">
+                <span class="text">Уход за изделиями</span>
+                <span class="icon svg-icon_container">
+                  <img src="/images/icons/angle-down.svg" class="svg-icon" />
+                </span>
+              </a>
+              <div class="content">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus hic molestias eius
+                  eveniet facere assumenda consequuntur ullam, dolorum iure laborum ipsa dicta, nesciunt quam
+                  aperiam inventore nobis maxime? Molestias, voluptas?
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a href="#" class="head">
+                <span class="text">Информация о доставке</span>
+                <span class="icon svg-icon_container">
+                  <img src="/images/icons/angle-down.svg" class="svg-icon" />
+                </span>
+              </a>
+              <div class="content">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus hic molestias eius
+                  eveniet facere assumenda consequuntur ullam, dolorum iure laborum ipsa dicta, nesciunt quam
+                  aperiam inventore nobis maxime? Molestias, voluptas?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="shop-information">
+        <h4 class="section-title">Информация</h4>
+        <div class="section-description centered">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dictum venenatis dolor, ut fringilla
+            nisi cursus quis. Nulla aliquam porta urna, a porta ipsum tincidunt a.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et elementum nisl. Duis tortor ante,
+            blandit ut tellus cursus, pellentesque scelerisque odio. Aliquam erat volutpat. Aliquam malesuada
+            bibendum tortor dictum tincidunt. Pellentesque blandit enim facilisis urna rutrum aliquam. Nulla
+            facilisi. Etiam interdum rhoncus risus, id consequat urna aliquet id. Ut vel nunc accumsan,
+            malesuada massa a, suscipit risus. Praesent eget elementum ipsum. Quisque eu mollis augue.
+            Maecenas eleifend elit quam, in aliquet nibh cursus quis. Ut mauris odio, pulvinar nec nibh at,
+            dictum pharetra neque. Mauris gravida lectus lectus, sed volutpat odio dictum ut.
+          </p>
+        </div>
+      </div>
+
+      <div class="same-products">
+        <h4 class="section-title">Похожие товары</h4>
+        <div class="products-grid">
+          <a href="#">
+            <div class="product-box" data-product-id="1">
+              <div class="product-box_action">
+                <button class="action btn animate__animated" type="button" data-product-fav="false">
+                  <img
+                    src="/images/icons/p-heart.svg"
+                    data-product-favorite-add
+                    class="svg-icon add-to-fav"
+                    alt="Добавить в избранные"
+                  />
+                  <img
+                    src="/images/icons/p-heart-filled.svg"
+                    data-product-favorite-remove
+                    class="svg-icon remove-from-fav"
+                    alt="Убрать из избранных"
+                  />
+                </button>
+              </div>
+              <div class="product-box_image">
+                <img data-product-image="main" src="../images/el1.png" alt="Product Name" />
+              </div>
+              <div class="product-box_meta">
+                <h4 class="product-box_meta-name">Название Украшения</h4>
+                <div class="product-box_meta-price">
+                  <span class="price">00.00</span>
+                  <span class="currency">MDL</span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="#">
+            <div class="product-box" data-product-id="2">
+              <div class="product-box_action">
+                <button class="action btn animate__animated" type="button" data-product-fav="true">
+                  <img
+                    src="/images/icons/p-heart.svg"
+                    data-product-favorite-add
+                    class="svg-icon add-to-fav"
+                    alt="Добавить в избранные"
+                  />
+                  <img
+                    src="/images/icons/p-heart-filled.svg"
+                    data-product-favorite-remove
+                    class="svg-icon remove-from-fav"
+                    alt="Убрать из избранных"
+                  />
+                </button>
+              </div>
+              <div class="product-box_image">
+                <img data-product-image="main" src="../images/el2.png" alt="Product Name" />
+                <img data-product-image="hover" src="../images/el3-hover.jpg" alt="Product name" />
+              </div>
+              <div class="product-box_meta">
+                <h4 class="product-box_meta-name">Название Украшения</h4>
+                <div class="product-box_meta-price">
+                  <span class="price">00.00</span>
+                  <span class="currency">MDL</span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="#">
+            <div class="product-box" data-product-id="3">
+              <div class="product-box_action">
+                <button class="action btn animate__animated" type="button" data-product-fav="false">
+                  <img
+                    src="/images/icons/p-heart.svg"
+                    data-product-favorite-add
+                    class="svg-icon add-to-fav"
+                    alt="Добавить в избранные"
+                  />
+                  <img
+                    src="/images/icons/p-heart-filled.svg"
+                    data-product-favorite-remove
+                    class="svg-icon remove-from-fav"
+                    alt="Убрать из избранных"
+                  />
+                </button>
+              </div>
+              <div class="product-box_image">
+                <img data-product-image="main" src="../images/el4.png" alt="Product Name" />
+              </div>
+              <div class="product-box_meta">
+                <h4 class="product-box_meta-name">Название Украшения</h4>
+                <div class="product-box_meta-price">
+                  <span class="price">00.00</span>
+                  <span class="currency">MDL</span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="#">
+            <div class="product-box" data-product-id="4">
+              <div class="product-box_action">
+                <button class="action btn animate__animated" type="button" data-product-fav="false">
+                  <img
+                    src="/images/icons/p-heart.svg"
+                    data-product-favorite-add
+                    class="svg-icon add-to-fav"
+                    alt="Добавить в избранные"
+                  />
+                  <img
+                    src="/images/icons/p-heart-filled.svg"
+                    data-product-favorite-remove
+                    class="svg-icon remove-from-fav"
+                    alt="Убрать из избранных"
+                  />
+                </button>
+              </div>
+              <div class="product-box_image">
+                <img data-product-image="main" src="../images/el5.png" alt="Product Name" />
+              </div>
+              <div class="product-box_meta">
+                <h4 class="product-box_meta-name">Название Украшения</h4>
+                <div class="product-box_meta-price">
+                  <span class="price">00.00</span>
+                  <span class="currency">MDL</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--#include virtual="/parts/feedback.html" -->
+</main>
+<!--#include virtual="/parts/footer.html" -->

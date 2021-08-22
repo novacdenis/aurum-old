@@ -1,0 +1,76 @@
+<section id="header-slider" class="big-rounded-btn_container">
+  <div class="big-rounded-btn_wrapper section-header">
+    <svg class="progress-ring" width="318" height="318">
+      <circle
+        class="progress-ring__circle"
+        stroke="white"
+        stroke-width="1"
+        fill="transparent"
+        r="157"
+        cx="157"
+        cy="157"
+      />
+    </svg>
+    <div class="content">
+      <span class="text">
+        Перейти <br />
+        в раздел
+      </span>
+      <span class="icon">
+        <img src="/images/icons/arrow-left.svg">
+      </span>
+    </div>
+  </div>
+  <div id="slider">
+    <div class="slider-inner">
+      <div id="slider-content">
+        <h2 id="slide-title">
+          Текст первого <br />
+          слайда
+        </h2>
+        <span data-slide-title="0">
+          Текст первого <br />
+          слайда
+        </span>
+        <span data-slide-title="1">
+          Текст второго <br />
+          слайда
+        </span>
+        <span data-slide-title="2">
+          Текст третьего <br />
+          слайда
+        </span>
+        <div id="slide-status">
+          Текст первого <br />
+          слайда
+        </div>
+        <span data-slide-status="0">
+          Текст первого <br />
+          слайда
+        </span>
+        <span data-slide-status="1">
+          Текст третьего <br />
+          слайда
+        </span>
+        <span data-slide-status="2">
+          Текст первого <br />
+          слайда
+        </span>
+      </div>
+    </div>
+
+    <img src="/images/header.jpg" data-mobile-image="/images/m-header.jpg" />
+    <img src="/images/header1.jpg" data-mobile-image="/images/m-header1.jpg" />
+    <img src="/images/header2.jpg" data-mobile-image="/images/m-header2.jpg" />
+
+    <div id="pagination">
+      <button class="active" data-slide="0"></button>
+      <button data-slide="1"></button>
+      <button data-slide="2"></button>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>

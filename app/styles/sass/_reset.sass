@@ -1,0 +1,36 @@
+*
+  box-sizing: border-box
+  &::after, &::before
+    box-sizing: content-box
+
+a
+  color: inherit
+  &:hover
+    text-decoration: none
+    color: unset
+
+h1, h2, h3, h4, h5, h6
+  font-weight: normal
+
+button
+  outline: none
+  border: none
+  background-color: transparent
+  cursor: pointer
+  padding: 0
+  &.disabled
+    pointer-events: none
+    opacity: .6 !important
+  &:focus, &:active
+    outline: none
+
+input, textarea
+  font-family: inherit
+
+p
+  margin: 0
+
+ul, li
+  padding: 0
+  margin: 0
+  list-style: none

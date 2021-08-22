@@ -1,0 +1,57 @@
+#categories
+  .categories-container
+    position: relative
+    height: 807px
+    display: flex
+    align-items: center
+    justify-content: center
+    .categories-items
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-direction: column
+    .categories-link
+      display: inline-block
+      font-family: TTRamillasRegular
+      font-size: 60px
+      position: relative
+      z-index: 9
+      color: $lighttext
+      transition: .15s ease-in
+      margin-bottom: 20px
+      &:hover, &.active
+        color: unset
+    .selected-category_images
+      position: absolute
+      width: 376px
+      z-index: 8
+      height: 486px
+      display: flex
+      align-items: center
+      transition: .3s
+      overflow: hidden
+      justify-content: center
+      &[data-pos="top"]
+        top: 0
+        left: 0
+      &[data-pos="bottom"]
+        right: 0
+        bottom: 0
+    .selected-category_scroll-container
+      display: flex
+      flex-direction: column
+      position: absolute
+      left: 0
+      transition: .3s
+    .selected-category_item
+      width: 376px
+      height: 486px
+      overflow: hidden
+      position: relative
+      img
+        width: 376px
+        height: 486px
+        object-fit: cover
+        display: flex
+        align-items: center
+        justify-content: center

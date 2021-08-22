@@ -1,0 +1,85 @@
+.account-layout
+  display: flex
+  align-items: center
+  justify-content: center
+  margin: 100px 0
+  &_content
+    display: grid
+    grid-template-columns: repeat(9, 1fr)
+    grid-template-rows: 1fr
+    gap: 60px
+    max-width: 1000px
+    width: 100%
+    .content-nav
+      grid-column: 1 / 4
+    .content-main
+      grid-column: 4 / 10
+
+.account-layout_content
+  .content-main
+    .title
+      font-family: FuturaPTMedium
+      font-weight: normal
+      font-size: 18px
+      text-transform: uppercase
+      margin-bottom: 35px
+      line-height: 39px
+
+#account-navigation
+  .title
+    font-size: 24px
+    font-family: TTRamillasMedium
+    margin-bottom: 35px
+  .links-sect
+    display: block
+    margin-bottom: 50px
+    a
+      display: block
+      font-size: 18px
+      font-family: FuturaPTMedium
+      text-transform: uppercase
+
+.account-form
+  .form-control
+    margin-bottom: 10px
+    label
+      margin: 0
+      font-family: FuturaPTMedium
+      color: $lighttext
+      font-size: 14px
+  .input
+    padding: 5px 0
+    text-align: left
+  .form-buttons
+    margin-top: 30px
+
+#accout-logout
+  .buttons-group
+    max-width: 80%
+    margin: 5px auto
+    .btn
+      min-width: unset
+
+@media screen and ( max-width: 800px )
+  .account-layout
+    margin: 40px 0
+    &_content
+      display: grid
+      grid-template-columns: 1fr
+      gap: 30px
+      align-items: start
+      max-width: 1000px
+      width: 100%
+      .content-nav
+        grid-column: 1 / 2
+      .content-main
+        grid-column: 1 / 2
+        .title
+          margin-bottom: 20px
+  #account-navigation
+    .title
+      margin-bottom: 20px
+    .links-sect
+      margin-bottom: 20px
+      a
+        margin-bottom: 5px !important
