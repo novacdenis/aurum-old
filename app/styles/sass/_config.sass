@@ -2,10 +2,10 @@
 
 $accent: orange
 $fontsize: 16px
-$textcolor: #2C2C2C
+$textcolor: #828C84
 $darkcolor: #363636
 $lineheight: 1.65
-$lighttext: #B6AEAD
+$lighttext: #C9CEB6
 $userfont: FuturaPTBook, sans-serif
 $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif
 
@@ -17,7 +17,6 @@ $gutter: $grid-gutter-width
 
 @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
 @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
-@import 'node_modules/swiper/swiper-bundle'
 @import 'node_modules/animate.css/animate.min'
 @import 'libs'
 
@@ -74,17 +73,6 @@ body
 		&.left, &.top
 			clip-path: inset(0)
 
-.big-rounded-btn_wrapper
-	position: absolute
-	z-index: 97
-
-.progress-ring
-	&__circle
-		transform: rotate(-90deg)
-		transform-origin: 50% 50%
-		&.animate
-			transition: 1.5s stroke-dashoffset
-
 .notifcation-container
 	position: fixed
 	top: 20px
@@ -131,3 +119,13 @@ body
 					width: 24px
 			&-title
 				font-size: 16px
+
+.circle-c
+	stroke-dasharray: 1000
+	stroke-dashoffset: 1000
+	&.animate
+		animation: stroke 2s .3s ease-out forwards
+
+@keyframes stroke
+	100%
+		stroke-dashoffset: 0

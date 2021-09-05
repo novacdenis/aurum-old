@@ -1,14 +1,14 @@
 <section id="header-slider" class="big-rounded-btn_container">
   <div class="big-rounded-btn_wrapper section-header">
-    <svg class="progress-ring" width="318" height="318">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <circle
-        class="progress-ring__circle"
-        stroke="white"
-        stroke-width="1"
+        class="circle-c"
+        cx="50"
+        cy="50"
+        r="46"
         fill="transparent"
-        r="157"
-        cx="157"
-        cy="157"
+        stroke="white"
+        stroke-width="0.4"
       />
     </svg>
     <div class="content">
@@ -17,7 +17,7 @@
         в раздел
       </span>
       <span class="icon">
-        <img src="/images/icons/arrow-left.svg">
+        <img src="/images/icons/arrow-left.svg" />
       </span>
     </div>
   </div>
@@ -71,6 +71,61 @@
   </div>
 </section>
 
+<section id="header-slider-m" class="big-rounded-btn_container">
+  <div class="big-rounded-btn_wrapper section-header">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle
+        class="circle-c"
+        cx="50"
+        cy="50"
+        r="46"
+        fill="transparent"
+        stroke="white"
+        stroke-width="0.4"
+      />
+    </svg>
+    <div class="content">
+      <span class="text">
+        Перейти <br />
+        в раздел
+      </span>
+      <span class="icon">
+        <img src="/images/icons/arrow-left.svg" />
+      </span>
+    </div>
+  </div>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="content" style="background-image: url(/images/header.jpg)">
+          <h2 class="title">
+            Текст первого <br />
+            слайда
+          </h2>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="content" style="background-image: url(/images/header1.jpg)">
+          <h2 class="title">
+            Текст второго <br />
+            слайда
+          </h2>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="content" style="background-image: url(/images/header2.jpg)">
+          <h2 class="title">
+            Текст третьего <br />
+            слайда
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>

@@ -37,7 +37,7 @@
 	"dependencies": {
 		"@googlemaps/js-api-loader": "^1.11.4",
 		"animate.css": "^4.1.1",
-		"regenerator-runtime": "^0.13.7",
-		"swiper": "^6.5.3"
+		"drift-zoom": "^1.5.0",
+		"regenerator-runtime": "^0.13.7"
 	}
 }

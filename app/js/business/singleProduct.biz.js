@@ -1,4 +1,5 @@
 import "regenerator-runtime";
+import Drift from "drift-zoom";
 import animateCSS from "../utils/animateCSS";
 import createNotification from "../utils/notification";
 
@@ -64,7 +65,9 @@ function initSingleProduct() {
       quantityRemove.setAttribute("data-balloon", balloons.remove);
     };
 
-    quantityAdd.addEventListener("click", () => {
+    quantityAdd.addEventListener("click", (e) => {
+      e.preventDefault();
+
       quantityRemove.classList.remove("disabled");
 
       if (currentValue >= maxCount) {
@@ -76,7 +79,9 @@ function initSingleProduct() {
       return updateQuantity();
     });
 
-    quantityRemove.addEventListener("click", () => {
+    quantityRemove.addEventListener("click", (e) => {
+      e.preventDefault();
+
       quantityAdd.classList.remove("disabled");
 
       if (currentValue < 2) {
@@ -100,8 +105,17 @@ function initSingleProduct() {
     const mainGalleryContent = mainGallery.querySelector(".image");
     const mainGalleryContentImage = mainGalleryContent.querySelector("img");
 
+    if (window.innerWidth > 1150) {
+      new Drift(mainGalleryContentImage, {
+        paneContainer: document.querySelector(".single-product_info"),
+        inlinePane: false,
+        hoverDelay: 250,
+      });
+    }
+
     const adjustMainGalleryHeight = (coefficient) => {
       const adjust = () => {
+        console.log(mainGallery.clientWidth);
         const height = mainGallery.clientWidth * coefficient;
         mainGallery.style.height = height + "px";
       };
@@ -110,11 +124,12 @@ function initSingleProduct() {
 
       window.addEventListener("resize", adjust);
     };
-    adjustMainGalleryHeight(1.148698884758364);
+    adjustMainGalleryHeight(0.99);
 
     const sliderTransition = (src) =>
       animateCSS(mainGalleryContent, "animate__fadeOutRight").then(() => {
         mainGalleryContentImage.src = src;
+        mainGalleryContentImage.dataset.zoom = src;
         animateCSS(mainGalleryContent, "animate__fadeInLeft");
       });
 

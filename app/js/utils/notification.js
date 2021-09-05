@@ -2,8 +2,8 @@ import animateCSS from "./animateCSS";
 import el from "./elFactory";
 
 /**
- * 
- * @param {string} config.type The type of notification 
+ *
+ * @param {string} config.type The type of notification
  */
 function createNotification(config) {
   const { type, title, content, duration } = config;
@@ -23,6 +23,13 @@ function createNotification(config) {
       animationIn: "animate__bounceInRight",
       animationOut: "animate__fadeOutUp",
       duration: "slower",
+    };
+  else if (type === "warn")
+    notifcation_config = {
+      icon: "/images/icons/warn.svg",
+      animationIn: "animate__fadeInRight",
+      animationOut: "animate__fadeOutUp",
+      duration: "basic",
     };
 
   if (window.innerWidth < 651) {

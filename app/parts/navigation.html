@@ -1,171 +1,144 @@
 <header id="navigation" class="navigation">
-  <div class="inner">
-    <a href="/" class="logo">
-      <span class="image">
-        <img src="/images/logo.svg" alt="Aurum" />
-      </span>
-    </a>
-    <nav class="links">
-      <a href="#" class="nav-link mr-15">Новинки</a>
-      <div class="nav-link_dropdown mr-15 ml-15" data-dropdown>
-        <a href="#" class="nav-link" data-dropdown-target>
-          <span class="text">Украшения</span>
-          <span class="icon svg-icon_container">
-            <img src="/images/icons/angle-down.svg" class="svg-icon" />
+  <div class="wrap">
+    <div class="inner">
+      <div class="mobile-menu">
+        <a
+          href="#menu"
+          class="nav-icon page-menu-trigger_desk mr-10 ml-10"
+          data-balloon="Меню"
+          data-balloon-pos="bottom"
+          data-balloon-pos-x="right"
+          data-sidebar-c="#desktop-category-menu"
+        >
+          <span class="main-icon">
+            <img src="/images/icons/menu.svg" class="svg-icon" alt="Меню" />
           </span>
         </a>
-        <div class="nav-link_dropdown-content" data-dropdown-content>
-          <a href="#" class="nav-link dropdown-link">Первый тип</a>
-          <a href="#" class="nav-link dropdown-link">Воторой тип</a>
-          <a href="#" class="nav-link dropdown-link">Третий тип</a>
-          <a href="#" class="nav-link dropdown-link">Четвертый тип</a>
+        <a
+          href="#menu"
+          class="nav-icon page-menu-trigger_mob mr-10 ml-10"
+          data-balloon="Меню"
+          data-balloon-pos="bottom"
+          data-balloon-pos-x="right"
+          data-sidebar="#mobile-nav_sidebar"
+        >
+          <span class="main-icon">
+            <img src="/images/icons/menu.svg" class="svg-icon" alt="Меню" />
+          </span>
+        </a>
+      </div>
+      <div class="logo">
+        <a href="/"> <img src="/images/logo.svg" alt="Aurum" /></a>
+      </div>
+      <div class="links">
+        <a href="#" class="nav-link mr-15">Новинки</a>
+        <div class="nav-dropdown dropdown mr-15 ml-15">
+          <a href="#" class="nav-link dropdown-trigger">
+            <span class="text">Украшения</span>
+            <span class="icon svg-icon_container">
+              <img src="/images/icons/angle-down.svg" class="svg-icon" />
+            </span>
+          </a>
+          <div class="nav-dropdown_content dropdown-content">
+            <a href="#" class="nav-link dropdown-link">Первый тип</a>
+            <a href="#" class="nav-link dropdown-link">Воторой тип</a>
+            <a href="#" class="nav-link dropdown-link">Третий тип</a>
+            <a href="#" class="nav-link dropdown-link">Четвертый тип</a>
+          </div>
         </div>
-      </div>
-      <a href="#" class="nav-link mr-15 ml-15">Помолвка и свадьба</a>
-      <a href="#" class="nav-link mr-15 ml-15">Для детей</a>
-      <a href="#" class="nav-link mr-15 ml-15">Часы</a>
-      <div class="nav-link_dropdown mr-15 ml-15" data-dropdown>
-        <a href="#" class="nav-link" data-dropdown-target>
-          <span class="text">Подарки</span>
-          <span class="icon svg-icon_container">
-            <img src="/images/icons/angle-down.svg" class="svg-icon" />
-          </span>
-        </a>
-        <div class="nav-link_dropdown-content" data-dropdown-content>
-          <a href="#" class="nav-link dropdown-link">Первый тип</a>
-          <a href="#" class="nav-link dropdown-link">Воторой тип</a>
-          <a href="#" class="nav-link dropdown-link">Третий тип</a>
-          <a href="#" class="nav-link dropdown-link">Четвертый тип</a>
+        <a href="#" class="nav-link mr-15 ml-15">Помолвка и свадьба</a>
+        <a href="#" class="nav-link mr-15 ml-15">Для детей</a>
+        <a href="#" class="nav-link mr-15 ml-15">Часы</a>
+        <div class="nav-dropdown dropdown mr-15 ml-15">
+          <a href="#" class="nav-link dropdown-trigger">
+            <span class="text">Подарки</span>
+            <span class="icon svg-icon_container">
+              <img src="/images/icons/angle-down.svg" class="svg-icon" />
+            </span>
+          </a>
+          <div class="nav-dropdown_content dropdown-content">
+            <a href="#" class="nav-link dropdown-link">Первый тип</a>
+            <a href="#" class="nav-link dropdown-link">Воторой тип</a>
+            <a href="#" class="nav-link dropdown-link">Третий тип</a>
+            <a href="#" class="nav-link dropdown-link">Четвертый тип</a>
+          </div>
         </div>
+        <a href="#" class="nav-link ml-15">Услуги</a>
       </div>
-      <a href="#" class="nav-link ml-15">Услуги</a>
-    </nav>
-    <div class="quick-access">
-      <div class="nav-icon_dropdown mr-15">
-        <a href="#language" class="nav-icon">
-          <span class="text">РУ</span>
-          <span class="icon svg-icon_container">
-            <img src="/images/icons/angle-down.svg" class="svg-icon" />
+      <div class="quick-access">
+        <a href="#lang" class="nav-link mr-10">РУ</a>
+        <a
+          href="#search"
+          class="nav-icon mr-10 ml-10"
+          data-sidebar="#search"
+          data-balloon="Поиск"
+          data-balloon-pos="bottom"
+        >
+          <span class="main-icon svg-icon_container">
+            <img src="/images/icons/search.svg" class="svg-icon" alt="Поиск" />
+          </span>
+        </a>
+        <a
+          href="#favorites"
+          class="nav-icon mr-10 ml-10"
+          data-balloon="Избранные"
+          data-balloon-pos="bottom"
+        >
+          <span class="main-icon svg-icon_container">
+            <img src="/images/icons/heart.svg" class="svg-icon" alt="Избранные" />
+          </span>
+        </a>
+        <a
+          href="#account"
+          class="nav-icon mr-10 ml-10"
+          data-balloon="Аккаунт"
+          data-balloon-pos="bottom"
+        >
+          <span class="main-icon svg-icon_container">
+            <img src="/images/icons/user.svg" class="svg-icon" alt="Аккаунт" />
+          </span>
+        </a>
+        <a
+          href="#cart"
+          class="nav-icon mr-10 ml-10"
+          data-balloon="Корзина"
+          data-balloon-pos="bottom"
+          data-balloon-pos-x="right"
+        >
+          <span class="main-icon svg-icon_container">
+            <img src="/images/icons/cart.svg" class="svg-icon" alt="Корзина" />
+          </span>
+        </a>
+        <a
+          href="#menu"
+          class="nav-icon page-menu-trigger_desk mr-10 ml-10"
+          data-balloon="Меню"
+          data-balloon-pos="bottom"
+          data-balloon-pos-x="right"
+          data-sidebar-c="#desktop-category-menu"
+        >
+          <span class="main-icon">
+            <img src="/images/icons/menu.svg" class="svg-icon" alt="Меню" />
+          </span>
+        </a>
+        <a
+          href="#menu"
+          class="nav-icon page-menu-trigger_mob mr-10 ml-10"
+          data-balloon="Меню"
+          data-balloon-pos="bottom"
+          data-balloon-pos-x="right"
+          data-sidebar="#mobile-nav_sidebar"
+        >
+          <span class="main-icon">
+            <img src="/images/icons/menu.svg" class="svg-icon" alt="Меню" />
           </span>
         </a>
       </div>
-      <a
-        href="#search"
-        class="nav-icon mr-10 ml-10"
-        data-sidebar="#search"
-        data-balloon="Поиск"
-        data-balloon-pos="bottom"
-      >
-        <span class="main-icon svg-icon_container">
-          <img src="/images/icons/search.svg" class="svg-icon" alt="Поиск" />
-        </span>
-      </a>
-      <a href="#favorites" class="nav-icon mr-10 ml-10" data-balloon="Избранные" data-balloon-pos="bottom">
-        <span class="main-icon svg-icon_container">
-          <img src="/images/icons/heart.svg" class="svg-icon" alt="Избранные" />
-        </span>
-      </a>
-      <a href="#account" class="nav-icon mr-10 ml-10" data-balloon="Аккаунт" data-balloon-pos="bottom">
-        <span class="main-icon svg-icon_container">
-          <img src="/images/icons/user.svg" class="svg-icon" alt="Аккаунт" />
-        </span>
-      </a>
-      <a
-        href="#cart"
-        class="nav-icon mr-10 ml-10"
-        data-balloon="Корзина"
-        data-balloon-pos="bottom"
-        data-balloon-pos-x="right"
-      >
-        <span class="main-icon svg-icon_container">
-          <img src="/images/icons/cart.svg" class="svg-icon" alt="Корзина" />
-        </span>
-      </a>
-      <a
-        href="#menu"
-        class="nav-icon desktop-menu mr-10 ml-10"
-        data-balloon="Меню"
-        data-balloon-pos="bottom"
-        data-balloon-pos-x="right"
-        data-sidebar-c="#desktop-category-menu"
-      >
-        <span class="main-icon">
-          <img src="/images/icons/menu.svg" class="svg-icon" alt="Меню" />
-        </span>
-      </a>
     </div>
   </div>
 </header>
 
-<header id="mobile-nav" class="navigation">
-  <div class="inner">
-    <a href="#menu" id="menu" class="nav-icon mobile-menu" data-sidebar="#mobile-nav_sidebar">
-      <span class="main-icon">
-        <img src="/images/icons/menu.svg" class="svg-icon" alt="Меню" />
-      </span>
-    </a>
-    <a href="/" class="logo">
-      <span class="image">
-        <img src="/images/logo.svg" alt="Aurum" />
-      </span>
-    </a>
-    <a href="#cart" class="nav-icon mobile-cart">
-      <span class="main-icon svg-icon_container">
-        <img src="/images/icons/cart.svg" class="svg-icon" alt="Корзина" />
-      </span>
-    </a>
-    <div class="quick-access">
-      <div class="nav-icon_dropdown mr-15">
-        <a href="#language" class="nav-icon">
-          <span class="text">РУ</span>
-          <span class="icon svg-icon_container">
-            <img src="/images/icons/angle-down.svg" class="svg-icon" />
-          </span>
-        </a>
-      </div>
-      <a
-        href="#search"
-        class="nav-icon mr-10 ml-10"
-        data-sidebar="#search"
-        data-balloon="Поиск"
-        data-balloon-pos="bottom"
-      >
-        <span class="main-icon svg-icon_container">
-          <img src="/images/icons/search.svg" class="svg-icon" alt="Поиск" />
-        </span>
-      </a>
-      <a href="#favorites" class="nav-icon mr-10 ml-10" data-balloon="Избранные" data-balloon-pos="bottom">
-        <span class="main-icon svg-icon_container">
-          <img src="/images/icons/heart.svg" class="svg-icon" alt="Избранные" />
-        </span>
-      </a>
-      <a href="#account" class="nav-icon mr-10 ml-10" data-balloon="Аккаунт" data-balloon-pos="bottom">
-        <span class="main-icon svg-icon_container">
-          <img src="/images/icons/user.svg" class="svg-icon" alt="Аккаунт" />
-        </span>
-      </a>
-      <a href="#cart" class="nav-icon mr-10 ml-10" data-balloon="Корзина" data-balloon-pos="bottom">
-        <span class="main-icon svg-icon_container">
-          <img src="/images/icons/cart.svg" class="svg-icon" alt="Корзина" />
-        </span>
-      </a>
-      <a
-        href="#menu"
-        class="nav-icon mr-10 ml-10"
-        data-balloon="Меню"
-        data-balloon-pos="bottom"
-        data-balloon-pos-x="right"
-        data-sidebar="#mobile-nav_sidebar"
-      >
-        <span class="main-icon">
-          <img src="/images/icons/menu.svg" class="svg-icon" alt="Меню" />
-        </span>
-      </a>
-    </div>
-  </div>
-</header>
-
-<div id="mobile-nav_sidebar" data-pos="left">
+<div id="mobile-nav_sidebar" data-pos="left" class="navigation">
   <nav class="links">
     <div class="user-links">
       <a href="#" class="nav-link icon mb-20" data-sidebar="#search" data-sidebar-close>

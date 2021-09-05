@@ -64,9 +64,25 @@ function headerSlider() {
       antialias: false,
     });
 
+    const _w = () => {
+      if (window.innerWidth < 720) {
+        if (window.innerHeight / window.innerWidth > 1.78) {
+          const _c =
+            window.innerHeight / window.innerWidth -
+            (window.innerHeight / window.innerWidth / 100) * 10;
+
+          return renderW * _c;
+        }
+
+        return window.innerWidth * 1.77;
+      }
+
+      return renderW;
+    };
+
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setClearColor(0x23272a, 1.0);
-    renderer.setSize(renderW, renderH);
+    renderer.setSize(_w(), renderH);
     parent.appendChild(renderer.domElement);
 
     let loader = new THREE.TextureLoader();
@@ -139,8 +155,10 @@ function headerSlider() {
 
             let slideTitleEl = document.getElementById("slide-title");
             let slideStatusEl = document.getElementById("slide-status");
-            let nextSlideTitle = document.querySelectorAll(`[data-slide-title="${slideId}"]`)[0].innerHTML;
-            let nextSlideStatus = document.querySelectorAll(`[data-slide-status="${slideId}"]`)[0].innerHTML;
+            let nextSlideTitle = document.querySelectorAll(`[data-slide-title="${slideId}"]`)[0]
+              .innerHTML;
+            let nextSlideStatus = document.querySelectorAll(`[data-slide-status="${slideId}"]`)[0]
+              .innerHTML;
 
             TweenLite.fromTo(
               slideTitleEl,
@@ -235,5 +253,21 @@ function headerSlider() {
     });
   });
 }
-headerSlider();
 
+function headerSliderM() {
+  new Swiper("#header-slider-m .swiper", {
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      renderBullet: function (index, className) {
+        return '<button class="' + className + '">' + "</button>";
+      },
+    },
+  });
+}
+
+if (window.innerWidth < 840) {
+  headerSliderM();
+} else {
+  headerSlider();
+}

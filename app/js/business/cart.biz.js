@@ -4,6 +4,24 @@ import el from "../utils/elFactory";
 import icons from "../utils/icons";
 import createNotification from "../utils/notification";
 
+const test = {
+  total: 739,
+  subtotal: 739,
+  items: [
+    {
+      id: "18",
+      name: "Название товара 61",
+      image: "https://aurum.md/uploads/products/39574f280e0c39f7bd72156aa9b8d93d.jpg",
+      size: "14",
+      id_size: "1",
+      price: "739.00",
+      count: "2",
+      subtotal: 739,
+      max: 10,
+      min: 1,
+    },
+  ],
+};
 class Cart {
   constructor(container, loadingNotify, emptyNotify) {
     this.$ = container;
@@ -46,12 +64,38 @@ class Cart {
     this.toggleCartLoading(false);
   }
 
-  async removeCartItem({ id, id_size }) {
+  async removeCartItem({ id, size }) {
     this.holdCartActions(true);
 
-    await fetch(`https://aurum.md/api/cart.update?id=${id}&id_size=${id_size}`)
+    await fetch(`https://aurum.md/api/cart.update?id=${id}&id_size=${size}`)
       .then((res) => res.json())
       .then((data) => this.setItemsNode(data));
+
+    this.holdCartActions(false);
+  }
+
+  async updateItemCount({ id, count, size }) {
+    this.holdCartActions(true);
+
+    const formData = new FormData();
+
+    formData.append("id", id);
+    formData.append("count", count);
+    formData.append("size", size);
+
+    await fetch("https://aurum.md/api/cartUpdate", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => this.setItemsNode(data))
+      .catch((err) =>
+        createNotification({
+          type: "error",
+          title: "Ошибка!",
+          content: err,
+        })
+      );
 
     this.holdCartActions(false);
   }
@@ -164,6 +208,31 @@ class Cart {
       el("img", { src: data.image, alt: data.name }),
       el("span", { class: "item-image_size" }, data?.size || "")
     );
+
+    const count_input = el("input", {
+      value: data.count,
+      class: "count",
+    });
+
+    const notifyUserAboutCount = () => {
+      let notified = false;
+
+      return () => {
+        if (!notified) {
+          createNotification({
+            type: "warn",
+            title: "Внимание!",
+            content: "Нажмите Enter для подтверждения",
+            duration: 5000,
+          });
+
+          notified = true;
+        }
+      };
+    };
+
+    const notify = notifyUserAboutCount();
+
     const meta = el(
       "div",
       { class: "item-mobile_meta" },
@@ -177,11 +246,7 @@ class Cart {
         { class: "item-price", "data-mobile-label": "Цена" },
         el("span", { class: "price" }, `${data.price} MDL`)
       ),
-      el(
-        "div",
-        { class: "item-count", "data-mobile-label": "Количество" },
-        el("span", { class: "count" }, data.count)
-      ),
+      el("div", { class: "item-count", "data-mobile-label": "Количество" }, count_input),
       el(
         "div",
         { class: "item-subtotal", "data-mobile-label": "Подытог" },
@@ -226,6 +291,33 @@ class Cart {
       },
       { once: true }
     );
+
+    count_input.addEventListener("change", ({ target: { value } }) => {
+      if (Number(value) < Number(data.min)) count_input.value = data.min;
+      else if (Number(value) > Number(data.max)) count_input.value = data.max;
+
+      count_input.classList.remove("error");
+    });
+
+    count_input.addEventListener("input", ({ target: { value } }) => {
+      if (Number(value) < Number(data.min) || Number(value) > Number(data.max)) {
+        count_input.classList.add("error");
+      } else {
+        count_input.classList.remove("error");
+      }
+
+      count_input.value = value.replace(/[^0-9]/g, "");
+    });
+
+    count_input.addEventListener("keydown", ({ key }) => {
+      if (key === "Enter") {
+        count_input.blur();
+
+        this.updateItemCount({ id: data.id, count: count_input.value, size: data.id_size });
+      }
+    });
+
+    count_input.addEventListener("focus", notify);
 
     actions.appendChild(remove_action);
     image.appendChild(remove_action_m);

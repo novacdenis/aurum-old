@@ -4,27 +4,13 @@ import animateCSS from "./utils/animateCSS";
 import convertImages from "./utils/convertImages";
 import {
   initializeModals,
-  intializeDropdowns,
   intializeSidebars,
   registerAccordion,
+  intializeDropdowns,
 } from "./popups";
 import elFactory from "./utils/elFactory";
-import customCursors from "./cursor";
 import initializeCategoriesMenu from "./categories";
 import createNotification from "./utils/notification";
-
-// Clean dom
-if (window.innerWidth < 1400) {
-  document.querySelector("#navigation")?.remove();
-} else {
-  document.querySelector("#mobile-nav")?.remove();
-}
-
-if (window.innerWidth > 650) {
-  document.querySelector("#menu.mobile-menu")?.remove();
-} else {
-  document.querySelector("#menu.desktop-menu")?.remove();
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   // Add animation delay for elements
@@ -54,9 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
   autoResizeTextarea();
 
   // Popups
-  intializeDropdowns();
   intializeSidebars();
   initializeModals();
+  intializeDropdowns();
 
   // Accodrions
   registerAccordion("#mobile-nav_sidebar .links");
@@ -64,14 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
   registerAccordion("#single-product .helping");
   registerAccordion("#faq .faq-container");
 
-  // Custom crusor
-  if (window.innerWidth > 800) customCursors();
-
   // Init Animation
   animations();
 
   // Initialize big menu
-  if (window.innerWidth > 1399) initializeCategoriesMenu();
+  if (window.innerWidth >= 1330) initializeCategoriesMenu();
 });
 
 function animations() {

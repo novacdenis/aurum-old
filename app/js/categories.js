@@ -49,7 +49,7 @@ function initializeCategoriesMenu() {
   if (!container) return;
 
   const closeBtn = container.querySelector(".categories__close");
-  const activateMenu = document.querySelector("[data-sidebar-c]");
+  const activateMenu = document.querySelectorAll("[data-sidebar-c]");
 
   let active_index = 0;
 
@@ -178,11 +178,15 @@ function initializeCategoriesMenu() {
       setInitiToImages();
     });
   });
-  activateMenu.addEventListener("click", () => {
-    container.classList.add("active");
-    animateImagesOnOpen();
-    animateCSS(container, "cat-menu-in");
+
+  activateMenu.forEach((itm) => {
+    itm.addEventListener("click", () => {
+      container.classList.add("active");
+      animateImagesOnOpen();
+      animateCSS(container, "cat-menu-in");
+    });
   });
+
 }
 
 export default initializeCategoriesMenu;

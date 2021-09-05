@@ -28,7 +28,7 @@
     width: 150%
     height: 150%
     position: absolute
-    min-height: 100vh
+    min-height: 100%
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
@@ -60,7 +60,7 @@
     line-height: 1
     margin: 100px 0 60px
     padding-left: 3%
-    font-family: TTRamillasMedium
+    font-family: FuturaPTLight
 
     @media screen and (min-width: 800px)
       font-size: 110px
@@ -146,3 +146,76 @@
       border: 1px solid rgba(255, 255, 255, 0.2)
       opacity: 0
       transition: opacity 0.4s ease-in-out, width 0.4s ease-in-out, height 0.4s ease-in-out
+
+#header-slider-m
+  display: none
+  position: relative
+  .swiper-pagination
+    top: 50%
+    left: calc(100% - 40px)
+    transform: translateY(-50%)
+    z-index: 6
+    display: flex
+    flex-direction: column
+    justify-content: center
+    z-index: 99
+    .swiper-pagination-bullet
+      display: block
+      -webkit-appearance: none
+      -moz-appearance: none
+      appearance: none
+      border: 0
+      width: 16px !important
+      height: 16px !important
+      background-color: #FFFFFF
+      border-radius: 100%
+      padding: 0
+      margin: 20px 0
+      cursor: pointer
+      position: relative
+      opacity: 0.2
+      transition: opacity 0.2s ease-in-out
+      outline: none
+      &:hover
+        opacity: 0.5
+      &.swiper-pagination-bullet-active
+        opacity: 1
+        &:before
+          width: 250%
+          height: 250%
+          opacity: 1
+
+      &:before
+        content: ''
+        display: block
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: 100%
+        height: 100%
+        border-radius: 100%
+        border: 1px solid rgba(255, 255, 255, 0.2)
+        opacity: 0
+        transition: opacity 0.4s ease-in-out, width 0.4s ease-in-out, height 0.4s ease-in-out
+
+  .swiper-slide
+    .content
+      height: 100vh
+      width: 100%
+      background-size: cover
+      background-position: 50% 50%
+      .title
+        font-size: 48px
+        letter-spacing: -1px
+        color: white
+        line-height: 1
+        padding: 50vh 0 60px
+        padding-left: 3%
+        font-family: FuturaPTLight
+
+@media screen and ( max-width: 840px )
+  #header-slider
+    display: none !important
+  #header-slider-m
+    display: block !important

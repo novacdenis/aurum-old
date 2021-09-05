@@ -1,73 +1,36 @@
 import animateCSS from "./utils/animateCSS";
-import toggleOverlay from "./utils/toggleGlobalOverlay";
 
 function intializeDropdowns() {
-  const initializator = document.querySelectorAll("[data-dropdown]");
+  const dropdowns = [...document.querySelectorAll(".dropdown")].map((item) => ({
+    trigger: item.querySelector(".dropdown-trigger"),
+    content: item.querySelector(".dropdown-content"),
+    wrapper: item,
+  }));
 
-  if (!initializator) return;
+  if (!dropdowns || !dropdowns.length) return;
 
-  const dropdowns = [];
+  const deactivate =
+    ({ trigger, wrapper, content }) =>
+    ({ target }) => {
+      if (!wrapper.contains(target) && target !== wrapper) {
+        content.classList.remove("active");
+        trigger.classList.remove("disabled");
 
-  const setNodeToIntial = (node, className) => (node.className = className);
-
-  initializator.forEach((item, idx) => {
-    const target = item.querySelector("[data-dropdown-target]");
-    const content = item.querySelector("[data-dropdown-content]");
-
-    const targetInitialForm = target.className;
-    const contentIntialForm = content.className;
-
-    dropdowns.push({
-      id: idx,
-      target: { node: target, reset: () => setNodeToIntial(target, targetInitialForm) },
-      content: { node: content, reset: () => setNodeToIntial(content, contentIntialForm) },
-      status: false,
-      dirty: false,
-    });
-  });
-
-  const activate = (dropdown) => {
-    const { id, target, content } = dropdown;
-
-    target.node.classList.add("active");
-    target.node.classList.add("inactive");
-
-    content.node.classList.add("show", "dropdown-in");
-
-    cleaner(id);
-  };
-
-  const deactivate = (dropdown) => {
-    const { target, content } = dropdown;
-
-    animateCSS(content.node, "dropdown-out").then(() => {
-      target.reset();
-      content.reset();
-    });
-
-    dropdown.dirty = dropdown.status = false;
-  };
-
-  const cleaner = (id) => {
-    setTimeout(() => {
-      const dropdown = dropdowns.find((item) => item.id === id);
-
-      if (dropdown && dropdown.status && !dropdown.dirty) {
-        deactivate(dropdown);
+        document.removeEventListener("click", deactivate);
       }
-    }, 6000);
-  };
+    };
 
-  dropdowns.forEach((dropdown) => {
-    const { target, content } = dropdown;
+  dropdowns.forEach((item) => {
+    const { trigger, content } = item;
 
-    target.node.addEventListener("mouseenter", () => {
-      dropdown.status = true;
-      activate(dropdown);
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      trigger.classList.add("disabled");
+      content.classList.add("active");
+
+      setTimeout(() => document.addEventListener("click", deactivate(item)));
     });
-
-    content.node.addEventListener("mouseenter", () => (dropdown.dirty = true));
-    content.node.addEventListener("mouseleave", () => deactivate(dropdown));
   });
 }
 
@@ -119,7 +82,7 @@ function intializeSidebars() {
 
     trigger.addEventListener("click", (e) => {
       e.preventDefault();
-      
+
       showSidebar(node);
       overlay.addEventListener("click", () => closeSidebar(node), { once: true });
     });
@@ -153,9 +116,9 @@ function registerAccordion(selector) {
     });
 
     // Close all items
-    const closeAllItems = () => {
-      items.forEach((_i) => {
-        _i.status = false;
+    const closeAllItems = (idx) => {
+      items.forEach((_i, _idx) => {
+        _idx !== idx && (_i.status = false);
       });
     };
 
@@ -177,10 +140,10 @@ function registerAccordion(selector) {
     };
 
     // Register listener
-    items.forEach((_i) => {
+    items.forEach((_i, _idx) => {
       _i.head.addEventListener("click", (e) => {
         e.preventDefault();
-        closeAllItems();
+        closeAllItems(_idx);
         _i.status = !_i.status;
         updateItems();
       });

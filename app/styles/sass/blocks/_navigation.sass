@@ -1,95 +1,84 @@
-// Base 
-.navigation
-  min-height: 60px
-  display: flex
-  align-items: center
-  background-color: $darkcolor
+#navigation, .navigation
+  top: 0
+  left: 0
+  background-color: #DEA455
+  z-index: 997
+  width: 100%
+  padding: 15px 0
+  position: relative
+  .mobile-menu
+    display: none !important
   &.transparent
     background-color: transparent
     position: absolute
     top: 0
     left: 0
     width: 100%
-    z-index: 998
+    z-index: 997
     background: linear-gradient(180deg, rgba(0,0,0,0.3477766106442577) 0%, rgba(0,0,0,0.13209033613445376) 60%, rgba(0,0,0,0) 100%)
-  a:not(.logo)
-    opacity: .82
-    transition: .15s ease-in
-    &:hover, &.active
-      color: #fff
-      opacity: 1
-  .inner
-    max-width: 1920px
-    width: calc( 100% - 5% - 5% )
-    margin: 0 auto
+  .inner, .links, .quick-access
     display: flex
     align-items: center
     justify-content: space-between
-  .logo
-    max-width: 129px
-    max-height: 31px
-    display: block
-
-// Main Links
-.links
-  display: flex
-  align-items: center
-  justify-content: center
-.nav-link
-  font-family: FuturaPTBook
-  letter-spacing: 1px
-  color: #fff
-.nav-link_dropdown
   .nav-link
+    letter-spacing: 1px
+    color: #e4e4e4
+    transition: .25s ease-in
     display: flex
     align-items: center
-    justify-content: center
+    justify-content: flex-start
+    font-family: FuturaPTLight
     .icon
+      margin-left: 8px
       transform: rotate(90deg)
-      margin-left: 6px
       svg
         width: 13px
         height: 13px
-
-// Quick Access
-
-.quick-access
-  display: flex
-  align-items: center
-  justify-content: center
-.nav-icon
-  color: #fff
-.svg-icon
-  width: 16px
-  height: 16px
-.nav-icon[href="#menu"]
-  line-height: 1
-  .svg-icon
-    width: 20px
-    height: 20px
-.nav-icon[href="#favorites"]
-  .svg-icon
-    width: 17px
-    height: 17px
-.nav-icon[href="#language"]
-  .text
-    letter-spacing: 1px
-.nav-icon_dropdown
+    &:hover
+      color: #fff
   .nav-icon
     display: flex
     align-items: center
-    .icon
-      transform: rotate(90deg)
-      margin-left: 5px
-      svg
-        width: 12px
-        height: 12px
+    justify-content: center
+    line-height: 1
+    &[href="#menu"]
+      .svg-icon
+        width: 20px
+        height: 20px
+        path
+          fill: #F2F1EF
+  .nav-dropdown
+    &_content
+      position: absolute
+      min-width: 100%
+      left: 0
+      background-color: #fff
+      white-space: nowrap
+      display: flex
+      align-items: flex-start
+      flex-direction: column
+      border-radius: 4px
+      overflow: hidden
+      opacity: 0
+      top: calc( 100% + 3px )
+      visibility: hidden
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px
+      transition: .15s ease-in
+      &.active
+        opacity: 1
+        visibility: visible
+        top: 100%
+      .nav-link
+        color: #575757
+        width: 100%
+        &:hover
+          color: #000
+    .dropdown-link
+      padding: 3px 10px
+      min-width: 132px
+      &:hover
+        background-color: #ebebeb
 
-// Mobile navigation
-#mobile-nav
-  display: none
-  .mobile-cart, .mobile-menu
-    display: none
 #mobile-nav_sidebar
   position: fixed
   top: 0
@@ -104,6 +93,10 @@
   left: 0
   backdrop-filter: blur(30px)
   animation-duration: .2s
+  .user-links
+    .nav-link:not(.head)
+      .icon
+        transform: rotate(0deg)
   .separator
     padding: 15px 0 21px
     width: 100%
@@ -141,24 +134,25 @@
   .nav-link
     justify-content: flex-start
 
-@media screen and ( max-width: 1400px )
-  #navigation
+@media screen and ( max-width: 1329px )
+  #navigation .links
     display: none
-  #mobile-nav
-    display: flex
 
 @media screen and ( max-width: 650px )
+  #navigation
+    .quick-access
+      order: 3
+      [href="#lang"], [href="#search"], [href="/shop/favorites"], [href="/account"], [href="#menu"]
+        display: none !important
+      [href="#cart"]
+      svg
+        width: 20px
+        height: 20px
+    .logo
+      order: 2
+      img
+        width: 92px
+    .mobile-menu
+      display: block !important
   #mobile-nav_sidebar
     width: 280px
-  #mobile-nav
-    .quick-access
-      display: none
-    .logo
-      max-width: 92px
-      img
-        max-width: 100%
-    .svg-icon
-      width: 20px
-      height: 20px
-    .mobile-cart, .mobile-menu
-      display: block
